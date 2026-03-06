@@ -131,8 +131,22 @@ type PageKey =
   | "login"
   | "register";
 
-function Card({ children, className = "", padded = true }: { children: React.ReactNode; className?: string; padded?: boolean }) {
-  return <div className={`card ${padded ? "pad" : ""} ${className}`}>{children}</div>;
+function Card({
+  children,
+  className = "",
+  padded = true,
+  style,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  padded?: boolean;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <div className={`card ${padded ? "pad" : ""} ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
 
 function Button({
